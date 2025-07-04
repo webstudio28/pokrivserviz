@@ -1,0 +1,252 @@
+---
+layout: base.njk
+title: Home
+description: Welcome to your new 11ty project
+---
+
+<!-- Unified Hero Section: Mobile (image bottom), Desktop (image right) -->
+<section id="home" class="relative max-w-7xl mx-auto min-h-screen md:min-h-[80vh] flex flex-col md:flex-row items-center md:items-center justify-between md:gap-12 pb-0 w-full py-12 md:py-16 scroll-mt-20">
+    <!-- Text Left (centered vertically on desktop) -->
+    <div class="w-full md:w-1/2 flex flex-col flex-1 items-center  md:items-start px-4 justify-center md:h-full z-10">
+        <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center md:text-left mb-6">
+            <span class="text-primary-red-dark md:text-5xl lg:text-5xl">Ремонт на покриви "Стиви"</span>
+            <span class="text-primary-dark-gray text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold mt-2 flex items-center justify-center md:justify-start gap-2">
+                <img src="/assets/images/location.png" alt="Location" class="w-6 h-6 inline-block" />
+                Пазарджик и региона
+            </span>
+        </h1>
+        <p class="text-gray-500 text-lg sm:text-xl md:text-2xl text-center md:text-left mb-10 font-medium">
+            Фирма за изграждане и ремонт на покриви, беседки и навеси.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto justify-center md:justify-start">
+            <a href="tel:+359888888888" class="btn-primary w-full sm:w-auto text-lg font-bold">Обади ни се</a>
+            <a href="/contact" class="btn-secondary w-full sm:w-auto text-lg font-bold">Контакти</a>
+        </div>
+    </div>
+    <!-- Image: bottom on mobile, right on desktop -->
+    <div class="w-full md:rounded-2xl  md:w-1/2 flex-shrink-0 flex justify-center items-end md:items-center md:justify-end h-auto md:h-full mt-auto md:mt-0 relative">
+        <!-- Mobile image and texture -->
+        <div class="w-full relative md:hidden pb-20">
+            <img src="{{ 'assets/images/hero-roof-mobile.png' | url }}" alt="Hero Roof Mobile"
+                class="w-full h-auto object-contain relative z-10"
+                style="max-height:40vh; max-height:400px; min-height:120px;" />
+            <img src="{{ 'assets/images/texture-hero2.png' | url }}" alt="Texture" class=" absolute opacity-20  bottom-[-25] min-w-full object-contain " style="pointer-events:none;" />
+        </div>
+        <!-- Desktop image -->
+        <img src="{{ 'assets/images/hero-roof.jpg' | url }}" alt="Hero Roof"
+            class="w-full h-auto object-cover hidden md:block shadow-xl rounded-3xl"
+            style="max-height:40vh; max-height:400px; min-height:120px;" />
+    </div>
+</section>
+
+<!-- Feature Cards Section: Защо да ни се доверите -->
+<section id="about" class="relative max-w-7xl mx-auto w-full px-4 py-0 md:py-12 scroll-mt-32">
+  <!-- Decorative floating shapes -->
+  <!-- Section Title with Accent Bar -->
+  <div class="flex flex-col md:flex-row items-center mb-12 w-full">
+    <h2 class="text-2xl mx-auto text-center sm:text-3xl md:text-4xl font-extrabold text-primary-dark-gray">За нас</h2>
+  </div>
+  <div class="w-full mb-10">
+    <p class="text-gray-600 text-lg md:text-xl text-center md:text-left font-medium">
+      Ние сме екип с дългогодишен опит в ремонта и изграждането на покриви. Работим с внимание към детайла, използваме само качествени материали и се стремим да надминем очакванията на всеки клиент. Вашето спокойствие и сигурност са наш приоритет.
+    </p>
+  </div>
+
+  <!-- Feature Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {% set features = [
+      {icon: 'check', title: 'Дългогодишен опит', desc: 'Над 15 години в бранша с доказани резултати.'},
+      {icon: 'shield', title: 'Гаранция за качество', desc: 'Работим с най-добрите материали и даваме гаранция.'},
+      {icon: 'bolt', title: 'Бърза реакция', desc: 'Реагираме в най-кратки срокове за вашето спокойствие.'}
+    ] %}
+    {% for feature in features %}
+    <div class="group bg-white border border-white/20 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 ease-out hover:scale-105 hover:shadow-2xl cursor-pointer relative overflow-hidden">
+      <!-- Decorative lines/dots -->
+      <span class="absolute left-4 top-4 w-2 h-2 bg-primary-red-dark rounded-full opacity-60 group-hover:scale-125 transition-transform"></span>
+      <span class="absolute right-4 bottom-4 w-8 h-1 bg-primary-dark-gray rounded-full opacity-30 group-hover:w-12 transition-all"></span>
+      <!-- Icon -->
+      <div class="mb-4">
+        {% if feature.icon == 'check' %}
+        <svg class="w-12 h-12 text-green-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        {% elseif feature.icon == 'shield' %}
+        <svg class="w-12 h-12 text-green-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5a1 1 0 00-1-1h-2.382a1 1 0 01-.894-.553l-.724-1.447A1 1 0 0014.382 2h-4.764a1 1 0 00-.894.553l-.724 1.447A1 1 0 016.382 4H4a1 1 0 00-1 1v7c0 6 8 10 8 10z"/></svg>
+        {% elseif feature.icon == 'bolt' %}
+        <svg class="w-12 h-12 text-green-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        {% endif %}
+      </div>
+      <h3 class="text-xl font-bold text-primary-dark-gray mb-2">{{ feature.title }}</h3>
+      <p class="text-primary-dark-gray text-base">{{ feature.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="relative max-w-7xl mx-auto w-full px-4 py-8 md:py-12 scroll-mt-20">
+  <!-- Section Title and Description -->
+  <div class="mb-12 text-center max-w-2xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary-dark-gray tracking-tight mb-4">Нашите услуги</h2>
+    <p class="text-gray-500 text-lg md:text-xl font-medium">Доверете се на нашия опит и професионализъм – предлагаме пълна гама услуги за вашия покрив, изпълнени с внимание към детайла и гаранция за качество.</p>
+  </div>
+
+  {% set services = [
+    {title: 'Монтаж на покриви', desc: 'Професионален монтаж на нови покриви с висококачествени материали.', image: '/assets/images/service-1.jpg'},
+    {title: 'Ремонт на покриви', desc: 'Всякакви ремонти на покриви – от малки поправки до цялостно възстановяване.', image: '/assets/images/service-2.jpg'},
+    {title: 'Ремонти при щети от вятър и буря', desc: 'Бърза реакция и качествен ремонт след природни бедствия.', image: '/assets/images/service-3.jpg'},
+    {title: 'Ремонт на покривна вентилация', desc: 'Подобряване и ремонт на вентилационни системи за по-дълъг живот на покрива.', image: '/assets/images/service-4.jpg'},
+    {title: 'Навеси', desc: 'Изработка и монтаж на навеси по индивидуален проект.', image: '/assets/images/service-5.jpg'},
+    {title: 'Беседки', desc: 'Красива и здрава беседка за вашия двор или градина.', image: '/assets/images/service-6.jpg'}
+  ] %}
+
+  <!-- Desktop grid, mobile horizontal scroll -->
+  <div class="hidden md:grid grid-cols-3 grid-rows-2 gap-8">
+    {% for service in services %}
+    <div class="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center ">
+      <div class="w-full aspect-[7/8] mb-4 rounded-xl overflow-hidden bg-primary-gray flex items-center justify-center">
+        <img src="{{ service.image }}" alt="{{ service.title }}" class="object-cover w-full h-full" />
+      </div>
+      <h2 class="text-lg font-bold text-primary-dark-gray mb-2">{{ service.title }}</h2>
+      <p class="text-primary-dark-gray text-base">{{ service.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="md:hidden flex gap-6 overflow-x-auto pb-4 -mx-4 px-4">
+    {% for service in services %}
+    <div class="min-w-[240px] max-w-[260px] flex-shrink-0 bg-white rounded-2xl shadow-xl p-4 flex flex-col items-center text-center">
+      <div class="w-full aspect-[7/8] mb-3 rounded-xl overflow-hidden bg-primary-gray flex items-center justify-center">
+        <img src="{{ service.image }}" alt="{{ service.title }}" class="object-cover w-full h-full" />
+      </div>
+      <h2 class="text-base font-bold text-primary-dark-gray mb-1">{{ service.title }}</h2>
+      <p class="text-primary-dark-gray text-sm">{{ service.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Projects Gallery Section -->
+<section id="projects" class="relative max-w-7xl mx-auto w-full px-4 py-8 md:py-12 scroll-mt-20">
+  <div class="mb-10 text-center max-w-2xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary-dark-gray tracking-tight mb-3">Нашите проекти</h2>
+    <p class="text-gray-500 text-lg md:text-xl font-medium">Разгледайте част от нашите реализирани обекти.</p>
+  </div>
+  <div class="relative flex items-center justify-center">
+    <button id="prevBtn" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 p-0 m-0 bg-transparent hover:scale-110 transition-transform focus:outline-none">
+      <svg class="w-10 h-10 text-primary-dark-gray opacity-70 hover:opacity-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <div class="w-full max-w-xl mx-auto overflow-hidden rounded-3xl shadow-lg md:w-4/5 md:max-w-none">
+      <div id="gallerySlider" class="flex transition-transform duration-500" style="will-change: transform;">
+        {% for project in projects %}
+        <div class="min-w-full relative flex-shrink-0 flex flex-col items-center justify-center">
+          <img src="{{ project.images[0] }}" alt="{{ project.alt or project.title }}" class="w-full h-[320px] md:h-[400px] object-cover rounded-3xl" />
+          <div class="absolute bottom-0 left-0 w-full px-6 pb-6 pt-10 bg-gradient-to-t from-black/70 to-transparent rounded-b-3xl flex flex-col items-center">
+            <h3 class="text-white text-2xl font-semibold mb-1 text-center drop-shadow">{{ project.title }}</h3>
+            <p class="text-white text-base opacity-90 text-center drop-shadow">{{ project.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button id="nextBtn" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 p-0 m-0 bg-transparent hover:scale-110 transition-transform focus:outline-none">
+      <svg class="w-10 h-10 text-primary-dark-gray opacity-70 hover:opacity-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="relative max-w-7xl mx-auto w-full px-4 py-8 md:py-12">
+  <div class="mb-10 text-center max-w-2xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary-dark-gray tracking-tight mb-3">Отзиви от клиенти</h2>
+    <p class="text-gray-500 text-lg md:text-xl font-medium">Какво казват нашите клиенти за нас</p>
+  </div>
+
+  {# desktop #}
+  {% set testimonials = testimonials %}
+  <div class="hidden md:grid grid-cols-3 gap-8">
+    {% for t in testimonials %}
+    <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-100">
+      <div class="flex items-center justify-center gap-1 mb-4">
+        {% for i in [1,2,3,4,5] %}
+        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        {% endfor %}
+      </div>
+      <p class="text-primary-dark-gray text-lg italic mb-4">"{{ t.quote }}"</p>
+      <div class="mt-auto">
+        <span class="font-bold text-gray-700">{{ t.name }}</span>
+        {% if t.role %}<span class="block text-gray-500 text-sm mt-1">{{ t.role }}</span>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+  <div class="md:hidden flex gap-6 overflow-x-auto pb-4 -mx-4 px-4">
+    {% for t in testimonials %}
+    <div class="min-w-[260px] max-w-[300px] flex-shrink-0 bg-white rounded-3xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100">
+      <div class="flex items-center justify-center gap-0.5 mb-3">
+        {% for i in [1,2,3,4,5] %}
+        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+        {% endfor %}
+      </div>
+      <p class="text-primary-dark-gray text-base italic mb-3">"{{ t.quote }}"</p>
+      <div class="mt-auto">
+        <span class="font-bold text-gray-700">{{ t.name }}</span>
+        {% if t.role %}<span class="block text-gray-500 text-xs mt-1">{{ t.role }}</span>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- CTA Contact Section -->
+<section id="contact" class="relative max-w-7xl mx-auto w-full px-4 py-8 md:py-12 overflow-x-hidden scroll-mt-64">
+  <!-- Remove external gradient circle -->
+  <div class="bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden w-full relative z-10">
+    <div class="md:w-1/2 w-full flex items-center justify-center p-2 md:p-4 relative overflow-hidden max-w-full">
+      <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-100 z-0" style="background-image: url('/assets/images/cta-bg.jpg');"></div>
+      <img src="/assets/images/home-cta.png" alt="Контакт CTA" class="w-full h-auto max-w-full md:max-w-full object-cover rounded-2xl relative z-10" />
+    </div>
+    <div class="md:w-1/2 w-full flex flex-col justify-between p-8 md:p-12 gap-6 max-w-full">
+      <div>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary-dark-gray mb-2 text-center md:text-left">Контакти</h2>
+        <p class="text-gray-600 text-lg md:text-xl mb-6 text-center md:text-left">Работим в Пазарджик и региона – можете да ни се обадите или да ни пишете!</p>
+        <div class="flex flex-col gap-4 mb-6">
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <img src="/assets/images/location.png" alt="Локация" class="w-6 h-6" />
+            <span class="text-base text-gray-800 font-semibold">Пазарджик и региона</span>
+          </div>
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <img src="/assets/images/phone.png" alt="Телефон" class="w-6 h-6" />
+            <a href="tel:+359886557683" class="text-base text-primary-red-dark font-semibold hover:underline">088 655 7683</a>
+          </div>
+          <div class="flex items-center gap-3 justify-center md:justify-start">
+            <img src="/assets/images/mail.png" alt="Имейл" class="w-6 h-6" />
+            <span class="text-base text-gray-800 font-semibold">(имейл скоро)</span>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-6 flex flex-col items-center md:items-start">
+        <div class="mb-4 text-center md:text-left">
+          <span class="text-lg md:text-xl font-semibold text-primary-dark-gray">
+            Свържете се с нас за<br>
+            <span class="text-xl md:text-2xl text-red-800 font-semibold">безплатна консултация</span>
+          </span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center md:justify-start">
+          <a href="tel:+359886557683" class="flex items-center justify-center gap-2 bg-primary-red text-white font-semibold px-8 py-3 rounded-2xl shadow hover:bg-red-700 transition-colors text-lg w-full sm:w-auto">
+            Обади ни се
+          </a>
+          <a href="viber://chat?number=+359886557683" class="flex items-center justify-center gap-2 bg-[#7360f2] text-white font-semibold px-8 py-3 rounded-2xl shadow hover:bg-[#5e4bb7] transition-colors text-lg w-full sm:w-auto">
+            <img src="/assets/images/viber.png" alt="Viber" class="w-6 h-6" />
+            Viber
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Force Tailwind to generate custom gradient color utilities -->
+<div class="hidden from-primary-red via-primary-red-dark to-primary-dark-gray bg-gradient-to-br"></div>
+
+
+

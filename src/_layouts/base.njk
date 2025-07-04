@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Ремонт на покриви Пазаджик | Стиви
+        </title>
+        <meta name="description" content=""Фирма за покриви в Пазарджик. Твоят най-добър избор за цялостен и частичен ремонт на покриви, изолации, улуци, навеси и беседки. 👷‍♂️ 10 години опит. 📅 До 15 години гаранция. 🎉 100+ доволни клиенти"">
+
+        <!-- Fonts -->
+        <!-- FONT PAIRING: Montserrat (headings), Mulish (body) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="{{ 'assets/css/styles.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/css/custom-styles.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/css/home.css' | url }}">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+
+        <!-- Open Graph meta tags -->
+        <meta property="og:title" content="Ремонт на покриви Пазрджик | Стиви"/>
+        <meta property="og:description" content="Фирма за ремонт на покриви, навеси и беседки в Пазрджик и региона."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="https://yourdomain.bg/assets/images/hero-roof.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+
+        <!-- External Scripts -->
+        <script src="{{ 'assets/js/gsap.min.js' }}"></script>
+        <script src="{{ 'assets/js/ScrollTrigger.min.js' }}"></script>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "RoofingContractor",
+          "name": "Ремонт на покриви Пазарджик | Стиви",
+          "image": "https://pokrivserviz.com/assets/images/logo.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Пазарджик",
+            "addressCountry": "BG"
+          },
+          "telephone": "+359886557683",
+          "url": "https://pokrivserviz.com/"
+        }
+        </script>
+
+        <link rel="icon" href="/assets/images/logo.ico" type="image/x-icon">
+
+    </head>
+    <body class="min-h-screen text-primary-white font-[Mulish]">
+
+        <div class="fixed inset-0 w-full h-[100vh] -z-10 pointer-events-none">
+            <img src="{{ 'assets/images/base-bg.jpg' | url }}" alt="Background" class="w-full h-full object-cover opacity-20" />
+        </div>
+
+        <div class="absolute inset-0 w-full h-full -z-5 bg-black opacity-10 pointer-events-none"></div>
+        
+        <div class="min-h-screen w-full">
+            <!-- Header -->
+            <header class="fixed w-full z-50 bg-gray-800 font-[Montserrat]">
+                <nav class="max-w-7xl mx-auto px-4 flex items-center min-h-20 relative">
+                    <a href="/" class="text-3xl md:text-4xl font-bold text-primary-white mr-8 pt-3 pb-3">
+                        <img src="/assets/images/logo.png" alt="Logo" class="h-10 md:h-16 w-auto inline-block align-middle" />
+                    </a>
+                    <div class="hidden md:flex md:items-center space-x-8 flex-1 justify-end">
+                        <a href="#home" class="hover:text-red-700 transition-colors">Начало</a>
+                        <a href="#about" class="hover:text-red-700 transition-colors">За нас</a>
+                        <a href="#services" class="hover:text-red-700 transition-colors">Услуги</a>
+                        <a href="#projects" class="hover:text-red-700 transition-colors">Проекти</a>
+                        <a href="#contact" class="hover:text-red-700 transition-colors">Контакти</a>
+                        <a href="#contact" class="ml-8 bg-primary-red text-primary-white font-bold px-6 py-2 rounded-3xl border-2 border-primary-red hover:bg-red-700 hover:border-red-700 hover:text-white transition-colors">
+                            Обади ни се
+                        </a>
+                        <a href="viber://chat?number=+359886557683" class="ml-2 flex items-center gap-2 bg-[#7360f2] text-white font-bold px-5 py-2 rounded-3xl border-2 border-[#7360f2] hover:bg-[#5e4bb7] hover:border-[#5e4bb7] transition-colors" title="Viber">
+                            <img src="/assets/images/viber.png" alt="Viber" class="w-5 h-5" />
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-2 ml-auto md:hidden">
+                        <a href="#contact" class="flex items-center md:hidden bg-primary-red text-primary-white font-bold px-3 py-1 text-sm rounded-2xl border-2 border-primary-red hover:bg-primary-dark-gray hover:text-primary-red transition-colors">
+                            Обади ни се
+                        </a>
+                        <a href="viber://chat?number=+359886557683" class="flex items-center justify-center ml-1 w-9 h-9 rounded-full bg-[#7360f2] hover:bg-[#5e4bb7] transition-colors border-2 border-[#7360f2]" title="Viber">
+                            <img src="/assets/images/viber.png" alt="Viber" class="w-5 h-5" />
+                        </a>
+                        <button id="mobile-menu-toggle" class="md:hidden text-primary-white ml-2 focus:outline-none relative w-10 h-10 flex flex-col items-center justify-center gap-1.5">
+                            <span id="hamburger-icon" class="block w-6 h-0.5 bg-primary-white transition-all duration-300 ease-in-out"></span>
+                            <span id="hamburger-icon-2" class="block w-6 h-0.5 bg-primary-white transition-all duration-300 ease-in-out"></span>
+                            <span id="hamburger-icon-3" class="block w-6 h-0.5 bg-primary-white transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </nav>
+                <div id="mobile-menu" class="absolute left-0 right-0 top-full w-full bg-primary-dark-gray bg-opacity-95 flex flex-col gap-8 py-8 px-8 z-50 shadow-2xl transition-all duration-300 ease-in-out origin-top scale-y-0 pointer-events-none opacity-0 md:hidden">
+                    <a href="#home" class="text-xl font-semibold hover:text-primary-accent transition-colors">Начало</a>
+                    <a href="#about" class="text-xl font-semibold hover:text-primary-accent transition-colors">За нас</a>
+                    <a href="#services" class="text-xl font-semibold hover:text-primary-accent transition-colors">Услуги</a>
+                    <a href="#projects" class="text-xl font-semibold hover:text-primary-accent transition-colors">Проекти</a>
+                    <a href="#contact" class="text-xl font-semibold hover:text-primary-accent transition-colors">Контакти</a>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="min-h-screen pt-28 md:pt-20 font-[Mulish]">
+                {{ content | safe }}
+            </main>
+
+            <!-- Footer -->
+            <footer class="bg-gray-900 mt-20 font-[Montserrat]">
+                <div class="max-w-90 mx-auto py-12 px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Your Company</h3>
+                            <p class="text-primary-gray">Your tagline here</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Contact</h3>
+                            <p class="text-primary-gray">123 Main Street</p>
+                            <p class="text-primary-gray">City, State 12345</p>
+                            <p class="text-primary-gray">tel: +1 234 567 8900</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Hours</h3>
+                            <p class="text-primary-gray">Monday - Friday</p>
+                            <p class="text-primary-gray">9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script src="{{ 'assets/js/home-animations.js' | url }}"></script>
+            <script src="{{ 'assets/js/home-gallery.js' | url }}"></script>
+        </div>
+    </body>
+</html>
