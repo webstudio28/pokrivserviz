@@ -1,7 +1,13 @@
 module.exports = function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
   
+  // Add date filter for sitemap
+  eleventyConfig.addFilter("dateIso", function(date) {
+    return new Date().toISOString();
+  });
   
   // Set input and output directories
   return {
