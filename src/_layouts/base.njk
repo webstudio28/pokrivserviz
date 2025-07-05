@@ -130,7 +130,7 @@
     <body class="min-h-screen text-primary-white font-[Mulish]">
 
         <div class="fixed inset-0 w-full h-[100vh] -z-10 pointer-events-none">
-            <img src="{{ '/assets/images/base-bg.jpg' | url }}" alt="Background" class="w-full h-full object-cover opacity-20" />
+            <img src="assets/images/base-bg.jpg" alt="Background" class="w-full h-full object-cover opacity-20" />
         </div>
 
         <div class="absolute inset-0 w-full h-full -z-5 bg-black opacity-10 pointer-events-none"></div>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="flex items-center gap-2 ml-auto md:hidden">
                         <a href="#contact" class="flex items-center md:hidden bg-primary-red text-primary-white font-bold px-3 py-1 text-sm rounded-2xl border-2 border-primary-red hover:bg-primary-dark-gray hover:text-primary-red transition-colors">
-                            Обади ни се
+                            Обаждане
                         </a>
                         <a href="viber://chat?number=+359886557683" class="flex items-center justify-center ml-1 w-9 h-9 rounded-full bg-[#7360f2] hover:bg-[#5e4bb7] transition-colors border-2 border-[#7360f2]" title="Viber">
                             <img src="assets/images/viber.png" alt="Viber" class="w-5 h-5" />
@@ -185,23 +185,42 @@
 
             <!-- Footer -->
             <footer class="bg-gray-900 mt-20 font-[Montserrat]">
-                <div class="max-w-90 mx-auto py-12 px-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="max-w-7xl mx-auto py-12 px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
                         <div>
-                            <h3 class="text-xl font-bold mb-4">Your Company</h3>
-                            <p class="text-primary-gray">Your tagline here</p>
+                            <h3 class="text-xl font-bold mb-4 text-white">Стиви - Ремонт на покриви</h3>
+                            <p class="text-gray-400 mb-4">Професионални услуги за ремонт и изграждане на покриви в Пазарджик и региона</p>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-3 justify-center md:justify-start">
+                                    <img src="assets/images/location.png" alt="Локация" class="w-5 h-5" />
+                                    <span class="text-gray-400">Пазарджик и региона</span>
+                                </div>
+                                <div class="flex items-center gap-3 justify-center md:justify-start">
+                                    <img src="assets/images/phone.png" alt="Телефон" class="w-5 h-5" />
+                                    <a href="tel:+359886557683" class="text-gray-400 hover:text-white transition-colors">088 655 7683</a>
+                                </div>
+                                <div class="flex items-center gap-3 justify-center md:justify-start">
+                                    <img src="assets/images/mail.png" alt="Имейл" class="w-5 h-5" />
+                                    <a href="mailto:stiviistilqnovv@abv.bg" class="text-gray-400 hover:text-white transition-colors">stiviistilqnovv@abv.bg</a>
+                                </div>
+                            </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold mb-4">Contact</h3>
-                            <p class="text-primary-gray">123 Main Street</p>
-                            <p class="text-primary-gray">City, State 12345</p>
-                            <p class="text-primary-gray">tel: +1 234 567 8900</p>
+                            <h3 class="text-xl font-bold mb-4 text-white">Услуги</h3>
+                            <ul class="text-gray-400 space-y-2">
+                                <li>Ремонт на покриви</li>
+                                <li>Изграждане на покриви</li>
+                                <li>Покривни конструкции</li>
+                                <li>Навеси и беседки</li>
+                                <li>Покривна изолация</li>
+                            </ul>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-4">Hours</h3>
-                            <p class="text-primary-gray">Monday - Friday</p>
-                            <p class="text-primary-gray">9:00 AM - 6:00 PM</p>
-                        </div>
+                    </div>
+                    <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col items-center gap-4">
+                        <p class="text-gray-400 text-sm text-center">© 2025 Ремонт на покриви "Стиви". Всички права запазени.</p>
+                        <a href="https://www.webstudio28.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
+                            <img src="assets/images/webstudio28.png" alt="WebStudio28" class="h-14 w-auto" />
+                        </a>
                     </div>
                 </div>
             </footer>
